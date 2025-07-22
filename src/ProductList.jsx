@@ -12,6 +12,14 @@ function ProductList({ onHomeClick }) {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart.items);
 
+    useEffect(() => {
+        const updatedAddedToCart = {};
+        cartItems.forEach(item => {
+            updatedAddedToCart[item.name] = true;
+        });
+        setAddedToCart(updatedAddedToCart);
+    }, [cartItems]);
+
     const plantsArray = [
         {
             category: "Air Purifying Plants",
