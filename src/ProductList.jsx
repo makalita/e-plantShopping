@@ -238,9 +238,10 @@ function ProductList({ onHomeClick }) {
     }
     const styleObjUl = {
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
-        width: '1100px',
+        width: '100%',
+        gap: '40px'
     }
     const styleA = {
         color: 'white',
@@ -285,15 +286,16 @@ function ProductList({ onHomeClick }) {
             <div className="navbar" style={styleObj}>
                 <div className="tag">
                     <div className="luxury">
-                        <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
-                        <a href="/" onClick={(e) => handleHomeClick(e)}>
-                            <div>
+                        <div className="logo-container">
+                            <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="Paradise Nursery Logo" className="logo-image" />
+                        </div>
+                        <div className="brand-container">
+                            <a href="/" onClick={(e) => handleHomeClick(e)}>
                                 <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
                                 <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-
                 </div>
                 <div style={styleObjUl}>
                     <div> <a href="#" onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a></div>
@@ -314,9 +316,9 @@ function ProductList({ onHomeClick }) {
             {!showCart ? (
                 <div className="product-grid">
                     {plantsArray.map((category, index) => ( // Loop through each category in plantsArray
-                        <div key={index}> {/* Unique key for each category div */}
-                            <h1>
-                            <div>{category.category}</div> {/* Display the category name */}
+                        <div key={index} className="category-container"> {/* Unique key for each category div */}
+                            <h1 className="category-title">
+                                <div>{category.category}</div> {/* Display the category name */}
                             </h1>
                             <div className="product-list"> {/* Container for the list of plant cards */}
                             {category.plants.map((plant, plantIndex) => ( // Loop through each plant in the current category

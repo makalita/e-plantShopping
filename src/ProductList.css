@@ -43,9 +43,22 @@ body {
 .product-grid {
     display:flex;
     flex-direction: column;
-    width: 100vw;
+    /* width: 100vw; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    gap: 40px;
+    padding: 20px;
+}
+.category-container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.category-title {
+    font-size: 28px;
+    margin: 20px;
+    color: #333;
 }
 .product-list {
     display: flex;
@@ -156,10 +169,35 @@ body {
 .luxury {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 650px;
-    font-size: 19px;
+    gap: 20px;
+    /* justify-content: center; */
+    /* width: 650px; */
+    /* font-size: 19px; */
 }
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo-image {
+    width: 80px;
+    height: auto;
+}
+
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-container h3 {
+    margin: 0;
+}
+
+.brand-container i {
+    font-size: 14px;
+}
+
 .cart{
     color: white;
     display: flex;
@@ -237,8 +275,14 @@ body {
       max-width: calc(50% - 20px); /* Adjust max-width for 2 cards per row with 20px gap on small screens */
     }
     .navbar {
-        flex-direction: column; /* Change flex direction to stack items vertically */
+        /* flex-direction: column; /* Change flex direction to stack items vertically * /*/
+        display: flex;
+        justify-content: space-between;
         align-items: center; /* Align items to the center of the container */
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+        font-size: 20px;
       }
     
       .tag {
